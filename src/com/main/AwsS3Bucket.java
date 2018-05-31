@@ -56,11 +56,6 @@ public class AwsS3Bucket {
 
 	
 	public void delete(){
-		AWSCredentials credentials = new BasicAWSCredentials(
-				  "AKIAI3BCSIYMP3CEUSBA", 
-				  "70kHXCYnzVVW5PPbvTbzsCr3LfM0z1JJ0kF3aeWP"
-				);
-		String bucketName = "babulbhanu91bucket2";
 		try{
 		AmazonS3 s3client = AmazonS3ClientBuilder
 				  .standard()
@@ -75,16 +70,8 @@ public class AwsS3Bucket {
 	
 	public JSONArray getfiles(){
 		JSONArray output = new JSONArray();
-		/*AWSCredentials credentials = new BasicAWSCredentials(
-				  "AKIAI3BCSIYMP3CEUSBA", 
-				  "70kHXCYnzVVW5PPbvTbzsCr3LfM0z1JJ0kF3aeWP"
-				);*/
+		
 		try{
-		/*AmazonS3 s3client = AmazonS3ClientBuilder
-				  .standard()
-				  .withCredentials(new AWSStaticCredentialsProvider(credentials))
-				  .withRegion(Regions.US_EAST_2)
-				  .build();*/
 		
 		List<Bucket> buckets = s3client.listBuckets();
 	
